@@ -13,7 +13,7 @@ import java.util.Date;
 @Table(name = "users2")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"},  allowGetters = true)
-public class User implements Serializable {
+public class AppUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
