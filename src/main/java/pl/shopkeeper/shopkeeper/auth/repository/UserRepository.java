@@ -21,4 +21,7 @@ public interface UserRepository extends JpaRepository<AppUser, Long>{
                 @Param("passwd") String passwd
             );
 
+    AppUser findByName(
+                @Param("name") String name
+            );
 }
