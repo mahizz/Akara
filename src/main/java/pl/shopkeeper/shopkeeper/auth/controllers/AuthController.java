@@ -25,7 +25,7 @@ public class AuthController {
 
         AppUser user = new AppUser();
 
-        user.setName(name);
+        user.setUsername(name);
 
         this.authService.addUser(user);
 

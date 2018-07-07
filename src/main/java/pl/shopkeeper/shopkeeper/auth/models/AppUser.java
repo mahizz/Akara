@@ -21,7 +21,6 @@ public class AppUser implements Serializable {
 
     @NotBlank
     private String username;
-
     private String passwd;
 
     @Column(nullable = false, updatable = false)
@@ -42,11 +41,11 @@ public class AppUser implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
+    public String getUsername() {
         return username;
     }
 
-    public void setName(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 

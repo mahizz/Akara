@@ -21,10 +21,10 @@ public class getUsersTest {
 
         String name = "name";
         // when
-        AppUser found = authRepository.findByName(name);
+        AppUser found = authRepository.findByUsername(name);
 
         // then
-        assertEquals(found.getName(), name);
+        assertEquals(found.getUsername(), name);
     }
 
 }

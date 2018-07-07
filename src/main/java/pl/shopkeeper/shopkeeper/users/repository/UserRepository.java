@@ -16,13 +16,7 @@ import pl.shopkeeper.shopkeeper.users.models.AppUser;
 
 public interface UserRepository extends JpaRepository<AppUser, Long>{
 
-    AppUser findByNameAndPasswd
-            (
-                    @Param("username") String username,
-                    @Param("passwd") String passwd
-            );
-
-    AppUser findByName(
+    AppUser findByUsername(
             @Param("username") String username
     );
 }
