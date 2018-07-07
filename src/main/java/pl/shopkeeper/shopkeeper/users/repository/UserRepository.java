@@ -1,9 +1,10 @@
-package pl.shopkeeper.shopkeeper.auth.repository;
+package pl.shopkeeper.shopkeeper.users.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
-import pl.shopkeeper.shopkeeper.auth.models.AppUser;
+import pl.shopkeeper.shopkeeper.users.models.AppUser;
+
 
 /**
  * User: Quinten
@@ -17,11 +18,11 @@ public interface UserRepository extends JpaRepository<AppUser, Long>{
 
     AppUser findByNameAndPasswd
             (
-                @Param("name") String name,
-                @Param("passwd") String passwd
+                    @Param("username") String username,
+                    @Param("passwd") String passwd
             );
 
     AppUser findByName(
-                @Param("name") String name
-            );
+            @Param("username") String username
+    );
 }

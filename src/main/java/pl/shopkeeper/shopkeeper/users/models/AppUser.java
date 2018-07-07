@@ -1,12 +1,13 @@
-package pl.shopkeeper.shopkeeper.auth.models;
+package pl.shopkeeper.shopkeeper.users.models;
 
-import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -46,8 +47,8 @@ public class AppUser implements Serializable {
         return username;
     }
 
-    public void setName(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.username = name;
     }
 
     public String getPasswd() {
