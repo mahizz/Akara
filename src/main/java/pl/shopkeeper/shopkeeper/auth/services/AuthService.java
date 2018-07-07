@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.shopkeeper.shopkeeper.auth.models.AppUser;
+import pl.shopkeeper.shopkeeper.auth.models.AuthUser;
 import pl.shopkeeper.shopkeeper.auth.repository.AuthRepository;
 
 @Service
@@ -15,11 +15,11 @@ public class AuthService {
     private AuthRepository authRepository;
 
     @Transactional(readOnly = true)
-    public List<AppUser> getAllUsers() {
+    public List<AuthUser> getAllUsers() {
         return authRepository.findAll();
     }
 
-    public void addUser(AppUser user) {
+    public void addUser(AuthUser user) {
         authRepository.save(user);
     }
 }

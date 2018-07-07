@@ -2,6 +2,8 @@ package pl.shopkeeper.shopkeeper.auth.models;
 
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -13,7 +15,7 @@ import java.util.Date;
 @Table(name = "users" , schema="auth")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"created_at", "updated_at"},  allowGetters = true)
-public class AppUser implements Serializable {
+public class AuthUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,12 +27,12 @@ public class AppUser implements Serializable {
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate
+    @CreationTimestamp
     private Date created_at;
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate
+    @UpdateTimestamp
     private Date updated_at;
 
     public Long getId() {

@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.shopkeeper.shopkeeper.auth.models.AppUser;
+import pl.shopkeeper.shopkeeper.auth.models.AuthUser;
 import pl.shopkeeper.shopkeeper.auth.services.AuthService;
 
 @RestController
@@ -21,9 +21,9 @@ public class AuthController {
     }
 
     @RequestMapping("/user-test")
-    public List<AppUser> newUser(@RequestParam(value="username", defaultValue="noname") String name){
+    public List<AuthUser> newUser(@RequestParam(value="username", defaultValue="noname") String name){
 
-        AppUser user = new AppUser();
+        AuthUser user = new AuthUser();
 
         user.setUsername(name);
 
